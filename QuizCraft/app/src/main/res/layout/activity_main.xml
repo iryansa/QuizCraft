@@ -10,9 +10,10 @@
 
 
     <TextView
-        android:id="@+id/mainHeading"
+        android:id="@+id/maintitle"
         android:layout_width="188dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="336dp"
         android:fontFamily="@font/poppinsmedium"
         android:shadowColor="#BB86FC"
         android:shadowDx="0"
@@ -22,8 +23,23 @@
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/subtitle"
+        android:layout_width="195dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="76dp"
+        android:fontFamily="@font/poppinssemibold"
+        android:text="Crack Questions, Earn XP, Rule the Leaderboard!"
+        android:textAlignment="center"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/maintitle"
+        app:layout_constraintVertical_bias="0.886" />
 </androidx.constraintlayout.widget.ConstraintLayout>
