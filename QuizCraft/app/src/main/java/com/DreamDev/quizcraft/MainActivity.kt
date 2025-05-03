@@ -9,6 +9,7 @@ import android.content.Intent
 import android.os.Handler
 import android.os.Looper
 import com.DreamDev.quizcraft.login.Login
+import com.DreamDev.quizcraft.login.Signup
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 
         // Delay for 5 seconds and navigate to Login screen
         Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this, Login::class.java)
+            val intent = Intent(this, Signup::class.java)
             startActivity(intent)
             finish()
         }, 3000) // 5000 milliseconds = 5 seconds
