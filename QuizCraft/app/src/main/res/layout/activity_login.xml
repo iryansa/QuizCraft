@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".login.Login"
+    android:background="@drawable/bg_gradient">
+
+    <TextView
+        android:id="@+id/maintitle"
+        android:layout_width="188dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="128dp"
+        android:fontFamily="@font/poppinsmedium"
+        android:shadowColor="#BB86FC"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="40"
+        android:text="QuizCraft"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:fontFamily="@font/poppinslightitalic"
+        android:text="Welcome Back!"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/maintitle" />
+
+    <EditText
+        android:id="@+id/usernameInput"
+        android:layout_width="350dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="45dp"
+        android:ems="10"
+        android:fontFamily="@font/poppinsregular"
+        android:background="@drawable/rounded_edittext_bg"
+        android:hint="Username"
+        android:textColorHint="#AAAAAA"
+        android:inputType="text"
+        android:maxLength="25"
+        android:singleLine="true"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:textColor="#DFDFDF"
+        android:gravity="center_vertical"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeText" />
+
+
+    <EditText
+        android:id="@+id/passswordInput"
+        android:layout_width="350dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:fontFamily="@font/poppinsregular"
+        android:background="@drawable/rounded_edittext_bg"
+        android:hint="Password"
+        android:textColorHint="#AAAAAA"
+        android:inputType="textPassword"
+        android:maxLength="25"
+        android:singleLine="true"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:textColor="#DFDFDF"
+        android:gravity="center_vertical"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/usernameInput" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

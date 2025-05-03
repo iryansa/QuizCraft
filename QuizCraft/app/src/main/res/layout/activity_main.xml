@@ -8,12 +8,22 @@
     tools:context=".MainActivity"
     android:background="@drawable/bg_gradient">
 
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:layout_constraintBottom_toTopOf="@+id/maintitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.864"
+        app:srcCompat="@drawable/logo2" />
 
     <TextView
         android:id="@+id/maintitle"
         android:layout_width="188dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="336dp"
         android:fontFamily="@font/poppinsmedium"
         android:shadowColor="#BB86FC"
         android:shadowDx="0"
@@ -23,6 +33,7 @@
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,4 +53,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/maintitle"
         app:layout_constraintVertical_bias="0.886" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
