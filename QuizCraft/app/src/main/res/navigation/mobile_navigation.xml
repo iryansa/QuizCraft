@@ -12,17 +12,17 @@
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/navigation_classroom"
-        android:name="com.DreamDev.quizcraft.Classroom"
+        android:name="com.DreamDev.quizcraft.ui.classroom.Classroom"
         android:label="fragment_classroom"
         tools:layout="@layout/fragment_classroom" />
     <fragment
         android:id="@+id/navigation_flash"
-        android:name="com.DreamDev.quizcraft.Xps"
+        android:name="com.DreamDev.quizcraft.ui.xp.Xps"
         android:label="fragment_xps"
         tools:layout="@layout/fragment_xps" />
     <fragment
         android:id="@+id/navigation_profile"
-        android:name="com.DreamDev.quizcraft.Profile"
+        android:name="com.DreamDev.quizcraft.ui.profile.Profile"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
 
