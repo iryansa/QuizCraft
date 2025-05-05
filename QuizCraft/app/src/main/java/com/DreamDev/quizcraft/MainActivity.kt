@@ -8,10 +8,14 @@ import androidx.core.view.WindowInsetsCompat
 import android.content.Intent
 import android.os.Handler
 import android.os.Looper
+import android.widget.Toast
 import com.DreamDev.quizcraft.login.Login
 import com.DreamDev.quizcraft.login.Signup
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var auth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -22,11 +26,22 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+        auth = FirebaseAuth.getInstance()
+
         // Delay for 5 seconds and navigate to Login screen
         Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this, Signup::class.java)
-            startActivity(intent)
-            finish()
+            if (auth.currentUser != null) {
+                startActivity(Intent(this, HomeActivity::class.java))
+                finish()
+            }
+            else {
+                val intent = Intent(this, Login::class.java)
+                startActivity(intent)
+                finish()
+            }
         }, 3000) // 5000 milliseconds = 5 seconds
+
+
+
     }
 }
