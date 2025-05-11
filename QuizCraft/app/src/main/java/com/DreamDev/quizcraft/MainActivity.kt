@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
 
-        // Delay for 5 seconds and navigate to Login screen
+        // Delay for 3 seconds and navigate to Login screen
         Handler(Looper.getMainLooper()).postDelayed({
             if (auth.currentUser != null) {
                 startActivity(Intent(this, HomeActivity::class.java))

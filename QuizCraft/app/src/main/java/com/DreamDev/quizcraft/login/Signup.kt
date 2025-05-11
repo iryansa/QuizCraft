@@ -55,9 +55,11 @@ class Signup : AppCompatActivity() {
             auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
-                        val user = User(name, email)
-                        val safeEmailKey = email.replace(".", "_")
-                        database.child("users").child(safeEmailKey).setValue(user)
+                        val firebaseUser = task.result?.user
+                        val uid = firebaseUser?.uid ?: return@addOnCompleteListener
+                        val user = User(name, email, uid)
+
+                        database.child("users").child(uid).setValue(user)
                             .addOnSuccessListener {
                                 Toast.makeText(this, "Sign Up Successful!", Toast.LENGTH_SHORT).show()
                                 val intent = Intent(this, HomeActivity::class.java)
@@ -71,6 +73,7 @@ class Signup : AppCompatActivity() {
                         Toast.makeText(this, "Auth failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
                     }
                 }
+
         }
     }
 }
