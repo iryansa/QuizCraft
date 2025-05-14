@@ -14,6 +14,7 @@ import com.DreamDev.quizcraft.models.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.messaging.FirebaseMessaging
 
 class Signup : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
@@ -61,6 +62,17 @@ class Signup : AppCompatActivity() {
 
                         database.child("users").child(uid).setValue(user)
                             .addOnSuccessListener {
+                                FirebaseMessaging.getInstance().token.addOnCompleteListener { task ->
+                                    if (task.isSuccessful) {
+                                        val token = task.result
+                                        val userId = FirebaseAuth.getInstance().currentUser?.uid
+                                        if (userId != null) {
+                                            val database = FirebaseDatabase.getInstance().reference
+                                            database.child("users").child(userId).child("fcmToken").setValue(token)
+                                        }
+                                    }
+                                }
+
                                 Toast.makeText(this, "Sign Up Successful!", Toast.LENGTH_SHORT).show()
                                 val intent = Intent(this, HomeActivity::class.java)
                                 startActivity(intent)

@@ -44,6 +44,10 @@ android {
 
 dependencies {
 
+    implementation (libs.glide)
+    annotationProcessor (libs.compiler)
+    implementation (libs.okhttp)
+    implementation (libs.volley)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -60,6 +64,7 @@ dependencies {
     implementation(libs.firebase.database)
     implementation(libs.androidx.core)
     implementation(libs.firebase.auth.ktx)
+    implementation(libs.firebase.messaging)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

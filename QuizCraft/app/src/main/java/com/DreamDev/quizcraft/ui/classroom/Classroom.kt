@@ -18,6 +18,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
 import android.content.res.Resources
+import com.DreamDev.quizcraft.quiz.QuizList
 import java.util.*
 
 class Classroom : Fragment() {
@@ -47,7 +48,7 @@ class Classroom : Fragment() {
                 classesContainer.removeAllViews()
 
                 for (classSnapshot in snapshot.children) {
-                    val classItem = classSnapshot.getValue(ClassItem::class.java)
+val classItem = classSnapshot.getValue(ClassItem::class.java)?.apply { classId = classSnapshot.key ?: "" }
                     val joinedUsers = classSnapshot.child("joinedUsers").children.map { it.key }
 
                     classItem?.let {
@@ -164,6 +165,7 @@ class Classroom : Fragment() {
         generateUniqueClassCode { uniqueCode ->
             val classId = databaseReference.push().key ?: return@generateUniqueClassCode
             val newClass = ClassItem(
+                classId = classId,
                 className = className,
                 imageName = category.lowercase(),
                 createdBy = currentUserId,
@@ -204,6 +206,10 @@ class Classroom : Fragment() {
             isFocusable = true
             setOnClickListener {
                 Toast.makeText(context, "Clicked on ${classItem.className}", Toast.LENGTH_SHORT).show()
+                val intent = Intent(context, QuizList::class.java)
+                intent.putExtra("categoryName" , "")
+                intent.putExtra("classId", classItem.classId)  // <-- send the Firebase PUSH id, not classCode
+                startActivity(intent)
             }
         }
 

@@ -1,60 +1,97 @@
 package com.DreamDev.quizcraft.ui.home
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import androidx.fragment.app.Fragment
 import com.DreamDev.quizcraft.R
+import com.DreamDev.quizcraft.Search.SearchQuizActivity
+import com.DreamDev.quizcraft.quiz.CreateQuizActivity
+import com.DreamDev.quizcraft.quiz.QuizList
+import com.DreamDev.quizcraft.quiz.QuizSolverActivity
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [Classroom.newInstance] factory method to
- * create an instance of this fragment.
- */
 class HomeFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+        // You can remove this method if not used
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
-    }
+        val rootView = inflater.inflate(R.layout.fragment_home, container, false)
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment Classroom.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            HomeFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+        val shareLayout = rootView.findViewById<View>(R.id.share_layout)
+        shareLayout.setOnClickListener {
+            val intent = Intent(requireContext(), CreateQuizActivity::class.java)
+            startActivity(intent)
+        }
+
+        val searchquiz = rootView.findViewById<ImageView>(R.id.account_picture)
+        searchquiz.setOnClickListener {
+            //open search quiz activity
+            val intent = Intent(requireContext(), SearchQuizActivity::class.java)
+            startActivity(intent)
+        }
+
+
+val technologyLayout = rootView.findViewById<View>(R.id.technology_layout)
+technologyLayout.setOnClickListener {
+    val intent = Intent(requireContext(), QuizList::class.java)
+    intent.putExtra("categoryName", "Technology")
+    intent.putExtra("classId", null as String?)
+    startActivity(intent)
+}
+
+val mathLayout = rootView.findViewById<View>(R.id.math_layout)
+mathLayout.setOnClickListener {
+    val intent = Intent(requireContext(), QuizList::class.java)
+    intent.putExtra("categoryName", "Math")
+    intent.putExtra("classId", null as String?)
+    startActivity(intent)
+}
+
+val physicsLayout = rootView.findViewById<View>(R.id.physics_layout)
+physicsLayout.setOnClickListener {
+    val intent = Intent(requireContext(), QuizList::class.java)
+    intent.putExtra("categoryName", "Physics")
+    intent.putExtra("classId", null as String?)
+    startActivity(intent)
+}
+
+val chemistryLayout = rootView.findViewById<View>(R.id.chemistry_layout)
+chemistryLayout.setOnClickListener {
+    val intent = Intent(requireContext(), QuizList::class.java)
+    intent.putExtra("categoryName", "Chemistry")
+    intent.putExtra("classId", null as String?)
+    startActivity(intent)
+}
+
+val geographyLayout = rootView.findViewById<View>(R.id.geography_layout)
+geographyLayout.setOnClickListener {
+    val intent = Intent(requireContext(), QuizList::class.java)
+    intent.putExtra("categoryName", "Geography")
+    intent.putExtra("classId", null as String?)
+    startActivity(intent)
+}
+
+        val PlayQuizv = rootView.findViewById<View>(R.id.play_quiz_button)
+        PlayQuizv.setOnClickListener {
+            val intent = Intent(requireContext(), QuizSolverActivity::class.java)
+            val quizid1 : String = "-OQ5N9L4LuXX_a1hjdKY"
+            val publicQuiz : Boolean = true
+
+            intent.putExtra("quizId", quizid1) // you need to store id too
+            intent.putExtra("isPublicQuiz", publicQuiz)
+            intent.putExtra("classId", "") // if needed
+            startActivity(intent)
+        }
+
+        return rootView
     }
 }

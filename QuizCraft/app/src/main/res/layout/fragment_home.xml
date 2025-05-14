@@ -32,7 +32,7 @@
         android:layout_marginTop="16dp"
         android:clickable="true"
         android:focusable="true"
-        android:src="@drawable/account_placeholder"
+        android:src="@android:drawable/ic_menu_search"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.864"
         app:layout_constraintStart_toEndOf="@+id/maintitle2"
@@ -299,7 +299,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/poppinssemibolditalic"
-                android:text="12 Days Streak"
+                android:text="0 Days Streak"
                 android:textColor="#FFFFFF"
                 android:textSize="14sp" />
 

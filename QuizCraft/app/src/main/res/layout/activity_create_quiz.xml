@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".quiz.CreateQuizActivity"
+    >
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/title_create_quiz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create Quiz"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppinssemibold"
+            android:textSize="24sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Total Questions Input -->
+        <EditText
+            android:id="@+id/total_questions_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter total number of questions"
+            android:inputType="number"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"/>
+
+        <!-- Question -->
+        <EditText
+            android:id="@+id/question_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Question"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Options -->
+        <EditText
+            android:id="@+id/option1_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Option 1"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:layout_marginTop="8dp"/>
+
+        <EditText
+            android:id="@+id/option2_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Option 2"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:layout_marginTop="8dp"/>
+
+        <EditText
+            android:id="@+id/option3_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Option 3"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:layout_marginTop="8dp"/>
+
+        <EditText
+            android:id="@+id/option4_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Option 4"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Correct Answer -->
+        <EditText
+            android:id="@+id/correct_answer_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Correct Answer (1-4)"
+            android:inputType="number"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Next Button -->
+        <Button
+            android:id="@+id/next_question_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Next"
+            android:layout_gravity="center_horizontal"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
+            android:layout_marginTop="24dp"/>
+
+        <!-- Submit Button (Hidden initially) -->
+        <Button
+            android:id="@+id/submit_quiz_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit Quiz"
+            android:layout_gravity="center_horizontal"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
+            android:visibility="gone"
+            android:layout_marginTop="24dp"/>
+
+    </LinearLayout>
+
+</ScrollView>
